@@ -10,7 +10,11 @@ const minimist = require('minimist')
 let args = minimist(process.argv)
 // import{franc} from 'franc'
 const code = franc(args.ip)
-console.log(args.ip)
-const language = langs.where("3",code);
-
-console.log(language.name)
+// console.log(args.ip)
+if(code==='und'){
+    console.log("Sorry Couldn't Find The Language, try more sample text")
+}
+else{
+    const language = langs.where("3",code);
+    console.log(language.name)
+}
